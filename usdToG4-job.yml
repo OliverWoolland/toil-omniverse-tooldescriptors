@@ -1,0 +1,7 @@
+usd:
+  class: File
+  path: export.usd
+
+script:
+  class: File
+  path: readUSD_makePYG4.py
