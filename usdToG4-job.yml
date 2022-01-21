@@ -2,6 +2,16 @@ usd:
   class: File
   path: export.usd
 
-script:
+# script:
+#   class: File
+#   path: readUSD_makePYG4.py
+
+macro:
   class: File
-  path: readUSD_makePYG4.py
+  path: /geant4/run.mac
+
+gdml_in:
+  class: File
+  path: test.gdml
+
+gdml_out: "out.gdml"

@@ -4,15 +4,29 @@ cwlVersion: v1.0
 class: Workflow
 inputs:
   usd: File
+  gdml_out: string
+  macro: File
 
+# outputs:
+#   gdml_file:
+#     type: File
+#     outputSource: usdToG4/gdml
 outputs:
-  gdml_file:
+  run_output:
     type: File
-    outputSource: usdToG4/gdml
-
+    outputSource: G4GDML/run_out
+    
 steps:
   usdToG4:
     run: usdToG4.cwl
     in:
       usd: usd
     out: [gdml]
+
+  G4GDML:
+    run: G4GDML.cwl
+    in:
+      gdml_in: usdToG4/gdml
+      gdml_out: gdml_out
+      macro: macro
+    out: [run_out]
