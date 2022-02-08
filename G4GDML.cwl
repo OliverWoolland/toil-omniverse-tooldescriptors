@@ -2,7 +2,7 @@
 
 cwlVersion: v1.0
 class: CommandLineTool
-baseCommand: [/Geant4Applications/Geant4GDML/load_gdml]
+baseCommand: [xvfb-run, /Geant4Applications/Geant4GDML/load_gdml]
 hints:
   DockerRequirement:
     dockerImageId: uom-omniverse-docker_geant4
@@ -21,9 +21,7 @@ inputs:
       position: 3
 
 outputs:
-  run_out:
+  obj_out:
     type: File
-    streamable: true
     outputBinding:
-      glob: g4out.txt
-stdout: g4out.txt
+      glob: g4.obj

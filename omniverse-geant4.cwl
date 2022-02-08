@@ -14,7 +14,7 @@ inputs:
 outputs:
   run_output:
     type: File
-    outputSource: G4GDML/run_out
+    outputSource: G4GDML/obj_out
     
 steps:
   usdToG4:
@@ -29,4 +29,4 @@ steps:
       gdml_in: usdToG4/gdml
       gdml_out: gdml_out
       macro: macro
-    out: [run_out]
+    out: [obj_out]
