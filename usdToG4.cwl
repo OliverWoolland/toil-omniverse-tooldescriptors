@@ -20,5 +20,7 @@ outputs:
     type: File
     outputBinding:
       glob: test.gdml
-#  gdml:
-#    type: stdout  
+  obj:
+    type: File
+    outputBinding:
+      glob: test.obj

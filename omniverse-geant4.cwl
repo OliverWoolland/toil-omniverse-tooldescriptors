@@ -15,13 +15,16 @@ outputs:
   run_output:
     type: File
     outputSource: G4GDML/obj_out
+  conversion_output:
+    type: File
+    outputSource: usdToG4/obj
     
 steps:
   usdToG4:
     run: usdToG4.cwl
     in:
       usd: usd
-    out: [gdml]
+    out: [gdml, obj]
 
   G4GDML:
     run: G4GDML.cwl
