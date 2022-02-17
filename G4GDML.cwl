@@ -6,6 +6,8 @@ baseCommand: [xvfb-run, /Geant4Applications/Geant4GDML/load_gdml]
 hints:
   DockerRequirement:
     dockerImageId: uom-omniverse-docker_geant4
+stdout: std_out.txt
+stderr: std_err.txt
 inputs:
   gdml_in:
     type: File
@@ -25,3 +27,11 @@ outputs:
     type: File
     outputBinding:
       glob: g4.obj
+  mtl_out:
+    type: File
+    outputBinding:
+      glob: g4.mtl
+  std_out:
+    type: stdout      
+  std_err:
+    type: stderr      

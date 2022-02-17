@@ -7,17 +7,25 @@ inputs:
   gdml_out: string
   macro: File
 
-# outputs:
-#   gdml_file:
-#     type: File
-#     outputSource: usdToG4/gdml
 outputs:
-  run_output:
+  obj_output:
     type: File
     outputSource: G4GDML/obj_out
-  conversion_output:
+  mtl_output:
     type: File
-    outputSource: usdToG4/obj
+    outputSource: G4GDML/mtl_out
+  geant4_output:
+    type: File
+    outputSource: G4GDML/std_out
+  geant4_errput:
+    type: File
+    outputSource: G4GDML/std_err
+  # conversion_output:
+  #   type: File
+  #   outputSource: usdToG4/obj
+  # gdml_used:
+  #   type: File
+  #   outputSource: G4GDML/gdml_out
     
 steps:
   usdToG4:
@@ -32,4 +40,4 @@ steps:
       gdml_in: usdToG4/gdml
       gdml_out: gdml_out
       macro: macro
-    out: [obj_out]
+    out: [obj_out,mtl_out,std_out,std_err]
