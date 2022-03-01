@@ -23,9 +23,9 @@ outputs:
   # conversion_output:
   #   type: File
   #   outputSource: usdToG4/obj
-  # gdml_used:
-  #   type: File
-  #   outputSource: G4GDML/gdml_out
+  gdml_used:
+    type: File
+    outputSource: usdToG4/gdml
     
 steps:
   usdToG4:
